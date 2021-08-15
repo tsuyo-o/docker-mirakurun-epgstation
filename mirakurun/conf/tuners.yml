@@ -1,0 +1,8 @@
+- name: US-3POUT
+  types:
+    - GR
+    - BS
+    - CS
+  command: recfsusb2n <channel> - -
+  decoder: arib-b25-stream-test
+  isDisable: false 

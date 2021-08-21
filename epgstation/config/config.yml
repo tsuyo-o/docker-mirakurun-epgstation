@@ -24,9 +24,9 @@ recordedFormat: '%YEAR%年%MONTH%月%DAY%日%HOUR%時%MIN%分%SEC%秒-%TITLE%'
 recordedFileExtension: .m2ts
 recorded:
     - name: recorded
-      path: '%ROOT%/recorded'
+      path: '/app'
 
-thumbnail: '%ROOT%/thumbnail'
+thumbnail: '/app/thumbnail'
 thumbnailSize: 480x270
 thumbnailPosition: 5
 
@@ -37,7 +37,7 @@ encodeProcessNum: 4
 concurrentEncodeNum: 1
 encode:
     - name: H.264
-      cmd: '%NODE% %ROOT%/config/enc.js'
+      cmd: '%NODE% /app/config/enc.js'
       suffix: .mp4
       rate: 4.0
 

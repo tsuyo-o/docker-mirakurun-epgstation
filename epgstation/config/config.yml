@@ -24,7 +24,7 @@ recordedFormat: '%YEAR%年%MONTH%月%DAY%日%HOUR%時%MIN%分%SEC%秒-%TITLE%'
 recordedFileExtension: .m2ts
 recorded:
     - name: recorded
-      path: '/app'
+      path: '/app/recorded'
 
 thumbnail: '/app/thumbnail'
 thumbnailSize: 480x270

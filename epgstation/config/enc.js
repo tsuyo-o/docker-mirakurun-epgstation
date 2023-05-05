@@ -50,7 +50,7 @@ if (isDualMono) {
     ]);
     Array.prototype.push.apply(args, ['-c:a', 'ac3', '-ar', '48000', '-ab', '256k']);
 } else {
-    Array.prototype.push.apply(args, ['-map', '0:a', '-c:a', 'copy']);
+    Array.prototype.push.apply(args, ['-map', '0:a', '-c:a', 'aac']);
 }
 // 字幕ストリーム設定
 Array.prototype.push.apply(args, ['-map', '0:s?', '-c:s', 'mov_text']);

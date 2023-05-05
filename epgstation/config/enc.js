@@ -8,6 +8,8 @@ const output = process.env.OUTPUT;
 const isDualMono = parseInt(process.env.AUDIOCOMPONENTTYPE, 10) == 2;
 const args = ['-y'];
 
+const fs = require('fs');
+
 /**
  * 動画長取得関数
  * @param {string} filePath ファイルパス
@@ -159,6 +161,15 @@ Array.prototype.push.apply(args, [output]);
     child.on('error', err => {
         console.error(err);
         throw new Error(err);
+    });
+
+    // https://github.com/l3tnun/EPGStation/issues/583#issuecomment-1052106140
+    child.on('exit', (code) => {
+        var stat = fs.statSync(output);
+        if (stat.size < 10 * 1024) {
+            console.error("File site too small (< 10k). Raising error");
+            throw new Error(1);
+        }
     });
 
     process.on('SIGINT', () => {

@@ -1,6 +1,7 @@
-- name: MX
+- name: community1 channel shinagawa
   type: GR
   channel: '16'
+  isDisabled: true
 
 - name: TVK
   type: GR
@@ -288,4 +289,3 @@
   type: CS
   channel: CS24
   isDisabled: true
-

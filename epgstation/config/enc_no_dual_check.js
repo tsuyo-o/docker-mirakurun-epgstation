@@ -39,9 +39,9 @@ Array.prototype.push.apply(args, ['-fix_sub_duration']);
 // input 設定
 Array.prototype.push.apply(args, ['-i', input]);
 // ビデオストリーム設定
-Array.prototype.push.apply(args, ['-map', '0:v', '-c:v', 'libx264']);
+Array.prototype.push.apply(args, ['-map', '0:v:0', '-c:v', 'libx264']);
 // オーディオストリーム設定
-Array.prototype.push.apply(args, ['-map', '0:a', '-c:a', 'aac']);
+Array.prototype.push.apply(args, ['-map', '0:a:0', '-c:a', 'aac']);
 //if (isDualMono) {
 //    Array.prototype.push.apply(args, [
 //        '-filter_complex',

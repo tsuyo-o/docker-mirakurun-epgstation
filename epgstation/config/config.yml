@@ -41,6 +41,11 @@ encode:
       suffix: .mp4
       rate: 4.0
 
+    - name: H.264_nodual
+      cmd: '%NODE% /app/config/enc_no_dual_check.js'
+      suffix: .mp4
+      rate: 4.0
+
 urlscheme:
     m2ts:
         ios: vlc-x-callback://x-callback-url/stream?url=PROTOCOL://ADDRESS

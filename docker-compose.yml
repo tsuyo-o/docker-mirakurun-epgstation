@@ -53,6 +53,7 @@ services:
             - /data/TV:/app/recorded
         environment:
             TZ: "Asia/Tokyo"
+            LIBVA_DRIVER_NAME: "iHD"
         depends_on:
             - mirakurun
             - mysql

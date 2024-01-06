@@ -4,14 +4,16 @@ ENV DEV="make gcc git g++ automake curl wget autoconf build-essential libass-dev
 ENV FFMPEG_VERSION=4.2.4
 ENV LIBVA_DRIVER_NAME=iHD
 
-RUN apt-get update && \
+# add non-free repo to install "intel-media-va-driver-non-free"
+RUN sed -i "s/Components: main/Components: main non-free/" /etc/apt/sources.list.d/debian.sources && \
+    apt-get update && \
     apt-get -y install $DEV && \
     apt-get -y install yasm libx264-dev libmp3lame-dev libopus-dev libvpx-dev && \
     apt-get -y install libx265-dev libnuma-dev && \
     apt-get -y install libasound2 libass9 libvdpau1 libva-x11-2 libva-drm2 libxcb-shm0 libxcb-xfixes0 libxcb-shape0 libvorbisenc2 libtheora0 libaribb24-dev && \
     apt-get -y install libva-dev libmfx-dev intel-media-va-driver-non-free && \
 \
-#ffmpeg build
+# ffmpeg build
     mkdir /tmp/ffmpeg_sources && \
     cd /tmp/ffmpeg_sources && \
     curl -fsSL http://ffmpeg.org/releases/ffmpeg-${FFMPEG_VERSION}.tar.bz2 | tar -xj --strip-components=1 && \

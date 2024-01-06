@@ -34,12 +34,19 @@ const getDuration = filePath => {
     });
 };
 
+// HW encode
+Array.prototype.push.apply(args, ['-init_hw_device', 'qsv=hw']);
+Array.prototype.push.apply(args, ['-filter_hw_device', 'hw']);
+Array.prototype.push.apply(args, ['-vf', 'format=qsv,hwupload=extra_hw_frames=64']);
+//Array.prototype.push.apply(args, ['-hwaccel', 'qsv']);
+//Array.prototype.push.apply(args, ['-hwaccel_output_format', 'qsv']);
 // 字幕用
 Array.prototype.push.apply(args, ['-fix_sub_duration']);
 // input 設定
 Array.prototype.push.apply(args, ['-i', input]);
 // ビデオストリーム設定
-Array.prototype.push.apply(args, ['-map', '0:v', '-c:v', 'libx264']);
+//Array.prototype.push.apply(args, ['-map', '0:v', '-c:v', 'libx264']);
+Array.prototype.push.apply(args, ['-map', '0:v', '-c:v', 'h264_qsv']);
 // オーディオストリーム設定
 if (isDualMono) {
     Array.prototype.push.apply(args, [

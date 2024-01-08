@@ -43,7 +43,7 @@ services:
     epgstation:
         build:
             context: epgstation
-            dockerfile: alpine.Dockerfile
+#            dockerfile: alpine.Dockerfile
             args:
                 - CPUCORE=2
         volumes:
@@ -55,6 +55,7 @@ services:
         environment:
             TZ: "Asia/Tokyo"
             LIBVA_DRIVER_NAME: "iHD"
+            LIBVA_DRIVERS_PATH: "/usr/lib/x86_64-linux-gnu/dri"
         depends_on:
             - mirakurun
             - mysql

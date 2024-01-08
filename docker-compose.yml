@@ -43,6 +43,7 @@ services:
     epgstation:
         build:
             context: epgstation
+            dockerfile: alpine.Dockerfile
             args:
                 - CPUCORE=2
         volumes:

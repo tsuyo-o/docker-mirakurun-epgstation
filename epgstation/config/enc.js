@@ -34,12 +34,15 @@ const getDuration = filePath => {
     });
 };
 
-// HW encode
+// HW encode: qsv
 //Array.prototype.push.apply(args, ['-init_hw_device', 'qsv=hw']);
 //Array.prototype.push.apply(args, ['-filter_hw_device', 'hw']);
 //Array.prototype.push.apply(args, ['-vf', 'format=qsv,hwupload=extra_hw_frames=64']);
 //Array.prototype.push.apply(args, ['-hwaccel', 'qsv']);
 //Array.prototype.push.apply(args, ['-hwaccel_output_format', 'qsv']);
+// HW encode: vaapi
+Array.prototype.push.apply(args, ['-hwaccel', 'vaapi']);
+Array.prototype.push.apply(args, ['-hwaccel_device', '/dev/dri/renderD128']);
 // 字幕用
 Array.prototype.push.apply(args, ['-fix_sub_duration']);
 // input 設定

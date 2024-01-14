@@ -35,8 +35,8 @@ const getDuration = filePath => {
 };
 
 // HW encode: vaapi
-Array.prototype.push.apply(args, ['-hwaccel', 'vaapi']);
-Array.prototype.push.apply(args, ['-hwaccel_device', '/dev/dri/renderD128']);
+//Array.prototype.push.apply(args, ['-hwaccel', 'vaapi']);
+//Array.prototype.push.apply(args, ['-hwaccel_device', '/dev/dri/renderD128']);
 // 字幕用
 Array.prototype.push.apply(args, ['-fix_sub_duration']);
 // input 設定

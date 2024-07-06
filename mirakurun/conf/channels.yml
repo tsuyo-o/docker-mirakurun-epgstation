@@ -55,16 +55,6 @@
   channel: BS15_0
   serviceId: 102
 
-- name: NHK BSプレミアム
-  type: BS
-  channel: BS03_1
-  serviceId: 103
-
-- name: NHK BSプレミアム (sub)
-  type: BS
-  channel: BS03_1
-  serviceId: 104
-
 - name: BS日テレ
   type: BS
   channel: BS13_0
@@ -229,6 +219,23 @@
   channel: BS03_2
   serviceId: 256
   isDisabled: true
+
+- name: BS松竹東急
+  type: BS
+  channel: BS23_3
+  serviceId: 260
+  isDisabled: true
+
+- name: BSJapanext
+  type: BS
+  channel: BS23_2
+  serviceId: 263
+  isDisabled: true
+
+- name: BSよしもと
+  type: BS
+  channel: BS23_1
+  serviceId: 265
 
 - name: CS2
   type: CS
